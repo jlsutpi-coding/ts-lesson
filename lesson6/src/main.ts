@@ -20,26 +20,26 @@ class Coder2 {
   secondLang!: string;
 
   // if we add visibility modifier to the value of parameters
-
+  #age: number;
   constructor(
     public readonly name: string,
     public music: string,
-    private age: number,
+    age: number,
     protected lang: string = "Typescript" // default parameter
   ) {
     this.name = name;
-    this.age = age;
+    this.#age = age;
     this.music = music;
     this.lang = lang;
   }
 
   public getAge() {
-    return `Hello I'm ${this.age}`;
+    return `Hello I'm ${this.#age}`;
   }
 }
 
 const Dave = new Coder2("Jl Sut Pi", "rock", 22);
-console.log(Dave.getAge());
+console.log(Dave.getAge(), "get age");
 // console.log(Dave.lang);
 // console.log(Dave.age);
 

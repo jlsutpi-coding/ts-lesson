@@ -11,7 +11,6 @@ class Coder {
 class Coder2 {
     name;
     music;
-    age;
     lang;
     // name: string;
     // music: string;
@@ -20,23 +19,23 @@ class Coder2 {
     // if we add not null assertion we will remove the errors
     secondLang;
     // if we add visibility modifier to the value of parameters
+    #age;
     constructor(name, music, age, lang = "Typescript" // default parameter
     ) {
         this.name = name;
         this.music = music;
-        this.age = age;
         this.lang = lang;
         this.name = name;
-        this.age = age;
+        this.#age = age;
         this.music = music;
         this.lang = lang;
     }
     getAge() {
-        return `Hello I'm ${this.age}`;
+        return `Hello I'm ${this.#age}`;
     }
 }
 const Dave = new Coder2("Jl Sut Pi", "rock", 22);
-console.log(Dave.getAge());
+console.log(Dave.getAge(), "get age");
 // console.log(Dave.lang);
 // console.log(Dave.age);
 class WebDev extends Coder2 {
